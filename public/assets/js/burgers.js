@@ -1,30 +1,27 @@
 $(() => {
+  // Listen for submission of new burger and do a POST request
   $(".newBurger").on("submit", event => {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     const newBurger = {
       burger_name: $("#burgerName").val().trim()
     };
-    // Send the POST request.
+
     $.ajax({
       url: "/api/burgers",
       type: "POST",
       data: newBurger
     }).then(() => {
-      // Reload the page to get the updated list
       location.reload();
     });
   });
-
+  // Listen for click on devour button and do a PUT request
   $(".devour").on("click", function () {
     const id = $(this).attr("data-id");
 
-    // Send the PUT request.
     $.ajax(`/api/burgers/${id}/devoured`, {
       type: "PUT"
     }).then(() => {
-      // Reload the page to get the updated list
       location.reload();
     });
   });

@@ -1,3 +1,4 @@
+{{!-- header image --}}
 <header class="container">
   <div class="row">
     <img class="mx-auto" src="/assets/img/goodburger.jpg" alt="Good Burger">
@@ -5,7 +6,7 @@
 </header>
 
 
-
+{{!-- dynamically create a list of burgers that have not been eaten --}}
 <div class="row m-3 mx-auto w-75">
   <section class="container col-sm">
     <h2 class="m-3 text-center font-weight-bold">Burgers to eat</h2>
@@ -20,6 +21,7 @@
     </ul>
   </section>
 
+  {{!-- dynamically create a list of burgers that have been eaten --}}
   <section class="container col-sm">
     <h2 class="m-3 text-center font-weight-bold">Devoured Burgers</h2>
     <ul>
@@ -32,6 +34,7 @@
   </section>
 </div>
 
+{{!-- input form to add burgers --}}
 <section class="container my-5 w-75">
   <h2 class="font-weight-bold">Add a Burger:</h2>
   <form class="newBurger">
