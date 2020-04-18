@@ -1,1 +1,40 @@
-<h1>Burger Time!</h1>
+<header class="container">
+  <h1>Burger Time!</h1>
+</header>
+
+<section class="container">
+  <h2>Burgers to eat</h2>
+  <ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li class="mt-2"><button data-id="{{ id }}" class="devour btn btn-success btn-sm mr-1">Devour
+        it</button>{{ burger_name }}
+    </li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+</section>
+
+<section class="container">
+  <h2>Consumed Burgers</h2>
+  <ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>{{burger_name}}</li>
+    {{/if}}
+    {{/each}}
+  </ul>
+</section>
+
+<section class="container my-5">
+  <h2>Add a Burger:</h2>
+  <form class="newBurger" action="/api/burgers" method="POST">
+    <div class="input-group mb-3">
+      <input id="burgerName" name="burger_name" type="text" class="form-control" placeholder="Add burger here"
+        aria-label="Add burger name">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="submit">Add</button>
+      </div>
+    </div>
+  </form>
+</section>
