@@ -38,7 +38,7 @@ node server.js
 
 ## Screenshots
 
-![Screenshot](public/assets/img/screenshot.png)
+![Screenshot](public/assets/img/Screenshot.png)
 
 ## License
 
