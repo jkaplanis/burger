@@ -35,6 +35,18 @@ let orm = {
       }
       cb(data);
     });
+  },
+
+  deleteOne: (tableInput, condition, cb) => {
+    const queryString = "DELETE FROM ?? WHERE ?";
+    const values = [tableInput, condition];
+
+    connection.query(queryString, values, (err, data) => {
+      if (err) {
+        throw err;
+      }
+      cb(data);
+    });
   }
 };
 

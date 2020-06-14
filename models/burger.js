@@ -18,6 +18,12 @@ const burger = {
     orm.updateOne("burgers", burgerData, criteria, res => {
       cb(res);
     });
+  },
+
+  deleteOne: (criteria, cb) => {
+    orm.deleteOne("burgers", criteria, res => {
+      cb(res);
+    });
   }
 };
 

@@ -25,4 +25,14 @@ $(() => {
       location.reload();
     });
   });
+  // Listen for click on trash button and do a PUT request
+  $(".trash").on("click", function () {
+    const id = $(this).attr("data-id");
+
+    $.ajax(`/api/burgers/${id}/trashed`, {
+      type: "DELETE"
+    }).then(() => {
+      location.reload();
+    });
+  });
 });
