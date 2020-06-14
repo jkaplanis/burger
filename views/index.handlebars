@@ -13,7 +13,8 @@
     <ul>
       {{#each burgers}}
       {{#unless devoured}}
-      <li class="mt-2"><button data-id="{{ id }}" class="devour btn btn-danger btn-sm mr-1">Devour
+      <li style="list-style-type: none;" class="mt-2"><button data-id="{{ id }}"
+          class="devour btn btn-success btn-sm mr-1">Devour
           it</button>{{ burger_name }}
       </li>
       {{/unless}}
@@ -27,7 +28,8 @@
     <ul>
       {{#each burgers}}
       {{#if devoured}}
-      <li class="mt-2"><button data-id="{{ id }}" class="trash btn btn-danger btn-sm mr-1">Trash
+      <li style="list-style-type: none;" class="mt-2"><button data-id="{{ id }}"
+          class="trash btn btn-danger btn-sm mr-1">Trash
           it</button>{{burger_name}}</li>
       {{/if}}
       {{/each}}
